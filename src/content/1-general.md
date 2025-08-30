@@ -1,5 +1,5 @@
 ---
-title: General
+title: Favorites
 links:
   - href: https://www.sniffies.com/chat
     title: Sniffies
