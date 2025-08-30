@@ -1,10 +1,10 @@
 ---
 title: General
 links:
-  - href: https://mail.google.com/
-    title: Gmail
-    src: gmail.svg
-    alt: gmail-icon
+  - href: https://www.sniffies.com/chat
+    title: Sniffies
+    src: sniffies.svg
+    alt: sniffies-icon
   - href: https://photos.google.com
     title: Photos
     src: ./gphotos.svg
