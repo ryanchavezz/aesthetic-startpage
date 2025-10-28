@@ -24,7 +24,7 @@ const cards = await Astro.glob("../content/*.md");
   section {
     background-color: var(--card-background-color);
     border-radius: var(--border-radius);
-    width: 170px;
+    width: 350px;
     padding: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -41,8 +41,8 @@ const cards = await Astro.glob("../content/*.md");
 
   ul {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
