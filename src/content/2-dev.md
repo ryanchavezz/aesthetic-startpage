@@ -9,7 +9,8 @@ links:
     title: GitHub
     src: github.svg
     alt: github-icon
-  - href: claude://
+  - href: https://claude.ai/new
+    appUrl: claude://
     title: Claude
     src: claude.svg
     alt: claude-icon

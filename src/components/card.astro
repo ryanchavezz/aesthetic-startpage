@@ -9,7 +9,11 @@ const cards = await Astro.glob("../content/*.md");
       <ul>
         {card.frontmatter.links.map((link) => (
           <li>
-            <a href={link.href}>
+            <a
+              href={link.href}
+              data-app-url={link.appUrl}
+              class={link.appUrl ? "has-app-url" : ""}
+            >
               <img class="svg-icon" src={link.src} alt={link.alt} />
               {link.title}
             </a>
@@ -77,3 +81,40 @@ const cards = await Astro.glob("../content/*.md");
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const linksWithApps = document.querySelectorAll("a.has-app-url");
+
+    linksWithApps.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const appUrl = link.getAttribute("data-app-url");
+        const fallbackUrl = link.getAttribute("href");
+
+        if (appUrl) {
+          e.preventDefault();
+
+          // Try to open the app
+          const startTime = Date.now();
+          window.location.href = appUrl;
+
+          // Set a timer to fallback to website if app doesn't open
+          setTimeout(() => {
+            // If we're still on the page after 1.5 seconds, the app likely didn't open
+            const timeElapsed = Date.now() - startTime;
+            if (timeElapsed >= 1400) {
+              window.location.href = fallbackUrl;
+            }
+          }, 1500);
+
+          // Also check if window loses focus (app opened)
+          const onBlur = () => {
+            // App likely opened, clear the fallback
+            window.removeEventListener("blur", onBlur);
+          };
+          window.addEventListener("blur", onBlur);
+        }
+      });
+    });
+  });
+</script>
