@@ -32,6 +32,13 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: 'Sohne';
+    src: url('https://pub-3aba82a765834b83b436ded41afa3017.r2.dev/Sohne/TestSohne-ExtraleichtKursiv.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   :root {
     --background-color: #dee2e6;
     --text-color: #212529;
@@ -39,6 +46,7 @@ const { title } = Astro.props;
     --greyed-out-text-color: #adb5bd;
     --border-radius: 5px;
     --font-family: "Inter", sans-serif;
+    --header-font-family: "Sohne", sans-serif;
     --monospace-font-family: "Source Code Pro", monospace;
   }
 
