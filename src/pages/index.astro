@@ -17,7 +17,7 @@ import Help from "../components/help.astro";
   .cards {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: var(--size-8);
     width: 1200px;
     flex-wrap: wrap;
     justify-content: center;
@@ -29,18 +29,18 @@ import Help from "../components/help.astro";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 160px;
+    gap: var(--size-10);
   }
 
   @media only screen and (max-width: 1200px) {
     .content {
-      margin-top: 2em;
-      gap: 100px;
+      margin-top: var(--size-5);
+      gap: var(--size-8);
     }
     .cards {
       align-items: center;
       flex-direction: column;
-      gap: 20px;
+      gap: var(--size-5);
       width: auto;
     }
   }

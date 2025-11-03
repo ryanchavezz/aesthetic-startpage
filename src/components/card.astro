@@ -26,51 +26,75 @@ const cards = await Astro.glob("../content/*.md");
 
 <style>
   section {
-    background-color: var(--card-background-color);
-    border-radius: var(--border-radius);
+    background-color: var(--surface-2);
+    border: var(--border-size-1) solid var(--surface-3);
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-2);
     width: 170px;
-    padding: 20px 20px;
+    padding: var(--size-5);
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: var(--size-5);
     height: fit-content;
+    transition: all var(--ease-3) 300ms;
+  }
+
+  section:hover {
+    box-shadow: var(--shadow-4);
+    transform: translateY(-2px);
+    border-color: var(--surface-4);
   }
 
   h2 {
     font-family: var(--header-font-family);
     font-weight: 900;
-    font-size: 22px;
+    font-size: var(--font-size-3);
     letter-spacing: -0.5px;
+    color: var(--text-1);
   }
 
   ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: var(--size-3);
   }
 
   ul li {
-    font-size: 20px;
+    font-size: var(--font-size-2);
   }
 
   ul li a {
-    color: var(--text-color);
+    color: var(--text-2);
     text-decoration: none;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--size-2);
+    padding: var(--size-2);
+    border-radius: var(--radius-2);
+    transition: all var(--ease-2) 200ms;
+  }
+
+  ul li a:hover {
+    background-color: var(--surface-3);
+    color: var(--text-1);
+    transform: translateX(4px);
   }
 
   ul li a:visited {
-    color: var(--text-color);
+    color: var(--text-2);
   }
 
   ul li a img {
     max-width: 24px;
     max-height: 24px;
+    transition: transform var(--ease-2) 200ms;
+  }
+
+  ul li a:hover img {
+    transform: scale(1.1);
   }
 
   .svg-icon {
