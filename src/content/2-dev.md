@@ -13,4 +13,8 @@ links:
     title: Claude
     src: claude.svg
     alt: claude-icon
+  - href: https://vercel.com/ryan-chavezs-projects/aesthetic-startpage
+    title: Vercel
+    src: vercel.svg
+    alt: vercel-icon
 ---
