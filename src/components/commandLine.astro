@@ -1,9 +1,8 @@
 ---
-const name = "stefanyas";
 ---
 
 <section>
-  <p>{name}@<span id="browser-info"></span> |</p>
+  <p>Search</p>
   <input id="terminal-input" type="text" />
 </section>
 <style>
@@ -16,13 +15,10 @@ const name = "stefanyas";
   }
 
   p {
-    font-family: var(--monospace-font-family);
-    font-size: 20px;
-  }
-
-  #browser-info {
-    font-size: 20px;
-    font-weight: 500;
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.5px;
   }
 
   #terminal-input {
@@ -50,21 +46,7 @@ const name = "stefanyas";
   }
 </style>
 
-<p id="browser-info"></p>
-
 <script>
-  const p = document.getElementById("browser-info");
-  const userAgent = navigator.userAgent;
-  let browser = "unknown";
-
-  if (userAgent.indexOf("Chrome") !== -1) {
-    browser = "chrome";
-  } else if (userAgent.indexOf("Firefox") !== -1) {
-    browser = "firefox";
-  }
-
-  p.textContent = browser;
-
   const input = document.getElementById("terminal-input");
   const examples = [
     "how to tie a tie",
