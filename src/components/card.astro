@@ -26,10 +26,10 @@ const cards = await Astro.glob("../content/*.md");
 
 <style>
   section {
-    background-color: var(--surface-2);
-    border: var(--border-size-1) solid var(--surface-3);
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-3);
-    box-shadow: var(--shadow-2);
+    box-shadow: 0 1px 3px var(--shadow);
     width: 170px;
     padding: var(--size-5);
     display: flex;
@@ -40,18 +40,17 @@ const cards = await Astro.glob("../content/*.md");
   }
 
   section:hover {
-    box-shadow: var(--shadow-4);
+    box-shadow: 0 4px 12px var(--shadow);
     transform: translateY(-2px);
-    border-color: var(--surface-4);
+    border-color: var(--accent);
   }
 
   h2 {
-    font-family: var(--header-font-family);
-    font-weight: 200;
-    font-style: italic;
+    font-family: var(--font-family);
+    font-weight: 900;
     font-size: var(--font-size-3);
     letter-spacing: -0.5px;
-    color: var(--text-1);
+    color: var(--text-primary);
   }
 
   ul {
@@ -66,7 +65,7 @@ const cards = await Astro.glob("../content/*.md");
   }
 
   ul li a {
-    color: var(--text-2);
+    color: var(--text-secondary);
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -79,13 +78,13 @@ const cards = await Astro.glob("../content/*.md");
   }
 
   ul li a:hover {
-    background-color: var(--surface-3);
-    color: var(--text-1);
+    background-color: var(--background);
+    color: var(--text-primary);
     transform: translateX(4px);
   }
 
   ul li a:visited {
-    color: var(--text-2);
+    color: var(--text-secondary);
   }
 
   ul li a img {
