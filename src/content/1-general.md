@@ -13,4 +13,20 @@ links:
     title: YouTube
     src: youtube.svg
     alt: youtube-icon
+  - href: https://www.truepeoplesearch.com
+    title: TruePeopleSearch
+    src: truepeoplesearch.svg
+    alt: truepeoplesearch-icon
+  - href: https://wifiman.com
+    title: WiFiman
+    src: wifiman.svg
+    alt: wifiman-icon
+  - href: https://www.erowid.org/pharms/
+    title: EROWID
+    src: erowid.svg
+    alt: erowid-icon
+  - href: https://benefitscal.com/Public/login?lang=en
+    title: BenefitsCal
+    src: benefitscal.svg
+    alt: benefitscal-icon
 ---
