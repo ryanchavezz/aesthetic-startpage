@@ -26,30 +26,38 @@ const cards = await Astro.glob("../content/*.md");
 
 <style>
   section {
-    background-color: var(--card-background);
+    background: var(--card-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--card-border);
-    border-radius: var(--radius-3);
-    box-shadow: 0 1px 3px var(--shadow);
+    border-radius: 18px;
+    box-shadow:
+      0 2px 8px var(--shadow),
+      0 1px 2px rgba(0, 0, 0, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
     width: 170px;
     padding: var(--size-5);
     display: flex;
     flex-direction: column;
     gap: var(--size-5);
     height: fit-content;
-    transition: all var(--ease-3) 300ms;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   section:hover {
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: translateY(-2px);
-    border-color: var(--accent);
+    box-shadow:
+      0 8px 24px var(--shadow-hover),
+      0 4px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--card-border);
   }
 
   h2 {
     font-family: var(--header-font-family);
-    font-weight: 900;
+    font-weight: 600;
     font-size: var(--font-size-3);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
     color: var(--text-primary);
   }
 
@@ -73,14 +81,14 @@ const cards = await Astro.glob("../content/*.md");
     align-items: center;
     gap: var(--size-2);
     padding: var(--size-2);
-    border-radius: var(--radius-2);
-    transition: all var(--ease-2) 200ms;
+    border-radius: 10px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   ul li a:hover {
-    background-color: var(--background);
-    color: var(--text-primary);
-    transform: translateX(4px);
+    background-color: rgba(0, 122, 255, 0.08);
+    color: var(--accent);
+    transform: translateX(2px);
   }
 
   ul li a:visited {
@@ -90,11 +98,13 @@ const cards = await Astro.glob("../content/*.md");
   ul li a img {
     max-width: 24px;
     max-height: 24px;
-    transition: transform var(--ease-2) 200ms;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.85;
   }
 
   ul li a:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    opacity: 1;
   }
 
   .svg-icon {
